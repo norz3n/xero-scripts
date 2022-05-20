@@ -1,0 +1,16 @@
+post_install() {
+  echo "#############################################################"
+  echo "#  Teamviewer daemon Will Be Started For You Automatically. #"
+  echo "#############################################################"
+  systemctl enable --now teamviewerd
+}
+
+post_upgrade() {
+  post_install
+}
+
+post_remove() {
+  rm -rf /opt/teamviewer
+  systemctl disable teamviewerd
+
+}
