@@ -42,7 +42,7 @@ case $CHOICE in
     1 )
       echo
       echo "##########################################"
-      echo "           Checking nVidia GPU            "
+      echo "          Checking Installed GPU          "
       echo "##########################################"
       echo
 			sleep 3
