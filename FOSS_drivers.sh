@@ -20,11 +20,15 @@ tput sgr0
 echo
 echo "Select which Drivers to Install."
 echo
+echo "##################### GPU Checker #####################"
+echo
+echo "1.  Check Which GPU You Have."
+echo
 echo "############# Open Source Drivers #############"
 echo
-echo "1.  AMD GPU Free."
-echo "2.  Intel GPU Free."
-echo "3.  ATI (Radeon HD) GPU Free."
+echo "2.  AMD GPU Free."
+echo "3.  Intel GPU Free."
+echo "4.  ATI (Radeon HD) GPU Free."
 echo
 echo "Type Your Selection. To Exit, just close Window."
 echo
@@ -38,6 +42,25 @@ case $CHOICE in
     1 )
       echo
       echo "##########################################"
+      echo "          Checking Installed GPU          "
+      echo "##########################################"
+      echo
+			sleep 3
+			lspci -x | grep VGA
+			sleep 3
+      echo
+            glxinfo | grep -E "OpenGL vendor|OpenGL renderer*"
+            sleep 3
+      echo
+      echo "#######################################"
+      echo "                 Done !                "
+      echo "#######################################"
+            exit
+      ;;
+
+    2 )
+      echo
+      echo "##########################################"
       echo "     Installing AMD GPU Free Drivers      "
       echo "##########################################"
 			sleep 3
@@ -49,7 +72,7 @@ case $CHOICE in
             exit
       ;;
 
-    2 )
+    3 )
       echo
       echo "##########################################"
       echo "    Installing Intel GPU Free Drivers     "
@@ -63,8 +86,7 @@ case $CHOICE in
             exit
       ;;
 
-
-    3 )
+    4 )
       echo
       echo "##########################################"
       echo "     Installing ATI GPU Free Drivers      "

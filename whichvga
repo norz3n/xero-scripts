@@ -11,7 +11,7 @@ echo "##########################################################################
 echo
 lspci -x | grep VGA
 
-#lspci -vnnn | perl -lne 'print if /^\d+\:.+(\[\S+\:\S+\])/' | grep VGA
+lspci -vnnn | perl -lne 'print if /^\d+\:.+(\[\S+\:\S+\])/' | grep VGA
 
 echo
 echo "###############################################################################"
@@ -19,7 +19,7 @@ echo "###                               Check 2  GLXINFO                        
 echo "###############################################################################"
 echo
 
-glxinfo|egrep "OpenGL vendor|OpenGL renderer*"
+glxinfo | grep -E "OpenGL vendor|OpenGL renderer*"
 
 echo
 echo "###############################################################################"

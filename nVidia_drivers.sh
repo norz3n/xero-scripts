@@ -20,9 +20,12 @@ tput sgr0
 echo
 echo "Select which nVidia Drivers to Install."
 echo
-echo "############# nVidia Proprietary Drivers #############"
+echo "##################### GPU Checker #####################"
 echo
 echo "1.  Check Which nVidia GPU You Have."
+echo
+echo "############# nVidia Proprietary Drivers #############"
+echo
 echo "2.  nVidia R520.x Drivers (GTX 900 Series Onwards)."
 echo "3.  nVidia R470.x Drivers (GTX 500 Series Up To 700)."
 echo "4.  nVidia R390.x Drivers (GTX 400 Series & Older Not all)."
@@ -41,14 +44,13 @@ case $CHOICE in
       echo "##########################################"
       echo "           Checking nVidia GPU            "
       echo "##########################################"
-			sleep 3
-			if pacman -Qi nvidia-utils &> /dev/null; then
-               nvidia-smi -L
-              else
       echo
-      echo "Sorry No nVidia GPU is present"
-            fi
 			sleep 3
+			lspci -x | grep VGA
+			sleep 3
+      echo
+            glxinfo | grep -E "OpenGL vendor|OpenGL renderer*"
+            sleep 3
       echo
       echo "#######################################"
       echo "                 Done !                "
