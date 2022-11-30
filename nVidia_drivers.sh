@@ -20,13 +20,13 @@ tput sgr0
 echo
 echo "Select which nVidia Drivers to Install."
 echo
-echo "##################### GPU Checker #####################"
+echo "##################### GPU Checker ####################"
 echo
 echo "1.  Check Which nVidia GPU You Have."
 echo
 echo "############# nVidia Proprietary Drivers #############"
 echo
-echo "2.  nVidia R520.x Drivers (GTX 900 Series Onwards)."
+echo "2.  nVidia R525.x Drivers (GTX 900 Series Onwards)."
 echo "3.  nVidia R470.x Drivers (GTX 500 Series Up To 700)."
 echo "4.  nVidia R390.x Drivers (GTX 400 Series & Older Not all)."
 echo
@@ -61,10 +61,10 @@ case $CHOICE in
     2 )
       echo
       echo "##########################################"
-      echo "   Installing nVidia R520.x GPU Drivers   "
+      echo "   Installing nVidia R525.x GPU Drivers   "
       echo "##########################################"
 			sleep 3
-			sudo pacman -S --noconfirm --needed nvidia-dkms-tkg nvidia-utils-tkg nvidia-settings-tkg opencl-nvidia-tkg libxnvctrl lib32-nvidia-utils-tkg lib32-opencl-nvidia-tkg
+			sudo pacman -S --noconfirm --needed nvidia-dkms-tkg nvidia-utils-tkg nvidia-settings-tkg nvidia-egl-wayland-tkg opencl-nvidia-tkg libxnvctrl lib32-libxnvctrl lib32-nvidia-utils-tkg lib32-opencl-nvidia-tkg
 			sleep 3
       echo "#######################################"
       echo "                 Done !                "

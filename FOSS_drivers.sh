@@ -20,7 +20,7 @@ tput sgr0
 echo
 echo "Select which Drivers to Install."
 echo
-echo "##################### GPU Checker #####################"
+echo "################# GPU Checker #################"
 echo
 echo "1.  Check Which GPU You Have."
 echo
