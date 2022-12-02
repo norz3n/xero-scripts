@@ -86,7 +86,7 @@ case $CHOICE in
             exit
       ;;
 
-    3 )
+    4 )
       echo
       echo "##########################################"
       echo "   Installing nVidia R390.x GPU Drivers   "
